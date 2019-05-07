@@ -1,0 +1,28 @@
+{
+    "name": "invoice/invoice",
+    "description": "Simple Php Class For Beautiful Invoices",
+    "type": "library",
+    "keywords": [
+        "invoice"
+    ],
+    "homepage": "https://github.com/ofancn/invoice",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ofan",
+            "email": "admin@ofan.cn",
+            "homepage": "https://wwww.ofan.cn",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Invoice\\": "src/Invoice/"
+        }
+    }
+}
