@@ -2,6 +2,11 @@
 
 | Code        | Name           |
 | ------------- |:-------------:|
+|	CNY	|	Chinese Yuan	|
+|	CNH	|	Chinese Yuan (offshore)	|
+|	HKD	|	Hong Kong Dollar	|
+|	MOP	|	Macanese Pataca	|
+|	TWD	|	New Taiwan Dollar	|
 |	AFN	|	Afghan Afghani	|
 |	AFA	|	Afghan Afghani (1927–2002)	|
 |	ALL	|	Albanian Lek	|
@@ -68,9 +73,6 @@
 |	CLE	|	Chilean Escudo	|
 |	CLP	|	Chilean Peso	|
 |	CLF	|	Chilean Unit of Account (UF)	|
-|	CNX	|	Chinese People’s Bank Dollar	|
-|	CNY	|	Chinese Yuan	|
-|	CNH	|	Chinese Yuan (offshore)	|
 |	COP	|	Colombian Peso	|
 |	COU	|	Colombian Real Value Unit	|
 |	KMF	|	Comorian Franc	|
@@ -119,7 +121,6 @@
 |	GYD	|	Guyanaese Dollar	|
 |	HTG	|	Haitian Gourde	|
 |	HNL	|	Honduran Lempira	|
-|	HKD	|	Hong Kong Dollar	|
 |	HUF	|	Hungarian Forint	|
 |	ISK	|	Icelandic Króna	|
 |	ISJ	|	Icelandic Króna (1918–1981)	|
@@ -151,7 +152,6 @@
 |	LUL	|	Luxembourg Financial Franc	|
 |	LUC	|	Luxembourgian Convertible Franc	|
 |	LUF	|	Luxembourgian Franc	|
-|	MOP	|	Macanese Pataca	|
 |	MKD	|	Macedonian Denar	|
 |	MKN	|	Macedonian Denar (1992–1993)	|
 |	MGA	|	Malagasy Ariary	|
@@ -182,7 +182,6 @@
 |	NAD	|	Namibian Dollar	|
 |	NPR	|	Nepalese Rupee	|
 |	ANG	|	Netherlands Antillean Guilder	|
-|	TWD	|	New Taiwan Dollar	|
 |	NZD	|	New Zealand Dollar	|
 |	NIO	|	Nicaraguan Córdoba	|
 |	NIC	|	Nicaraguan Córdoba (1988–1991)	|

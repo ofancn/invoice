@@ -15,8 +15,4 @@ composer require invoice/invoice
 ## [Currency](document/Currency.en.md)
 
 
-~~~php
-
-~~~
-
 ## Documentation
