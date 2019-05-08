@@ -1,17 +1,17 @@
 <?php
+
 use Invoice\Invoice;
 
+if (!function_exists('get_invoice')) {
 
-if (!function_exists('newInvoice')) {
     /**
      * 实例Invoice
-     * @param array $currency 货币 默认 ['CNY', '￥']
-     * @param string $size 文档大小 默认A4
-     * @param string $language 语言 默认zh
-     * @return Invoice\Invoice
+     * @param string $currency 货币代码
+     * @param string $size 纸张大小 A4Default Letter Legal
+     * @param string $language 语言
      */
-    function newInvoice(array $currency = null, string $size = null, string $language = null)
-    {
+    function get_invoice($currency = 'CNY', $size = 'A4', $language = 'zh'): Invoice {
         return new Invoice($currency, $size, $language);
     }
+
 }
