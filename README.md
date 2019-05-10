@@ -78,4 +78,4 @@ $invoice->setNumberFormat('.',',')
 
 ~~~
 
-![演示](images/zh.png)
+![演示](images/zh.png?v1)
