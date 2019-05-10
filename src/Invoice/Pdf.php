@@ -1115,7 +1115,7 @@ class Pdf {
 
     function _textstring($s) {
         // Format a text string
-        return '(' . $this->_escape($s) . ')';
+        return '(' . $this->_UTF8toUTF16($this->_escape($s)) . ')';
     }
 
     function _UTF8toUTF16($s) {
