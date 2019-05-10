@@ -1,5 +1,4 @@
 <?php
-
 return [
     'number' => '编号',
     'date' => '报价日期',

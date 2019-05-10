@@ -1,5 +1,4 @@
 <?php
-
 return [
     'number' => 'Reference',
     'date' => 'Billing date',

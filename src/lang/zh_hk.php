@@ -1,5 +1,4 @@
 <?php
-
 return [
     'number' => '編號',
     'date' => '報價日期',
