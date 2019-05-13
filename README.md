@@ -96,7 +96,7 @@ $invoice->setNumberFormat('.',',')
 
 ### 类说明
 ~~~php
-/**
+    /**
      * 实例
      * @param string $currency
      *            货币代码
