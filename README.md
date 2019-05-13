@@ -91,7 +91,7 @@ $invoice->setNumberFormat('.',',')
 ~~~
 
 
-![演示](images/demo.png)
+
 
 
 ### 类说明
