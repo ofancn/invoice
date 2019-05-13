@@ -49,7 +49,7 @@ $invoice = new Invoice('CNY','A4');
 $invoice->setNumberFormat('.',',')
 
 //设置字体
-//->setFontFamily('SourceHanSans', '', '~/sourcehansans.ttf')
+//->setFontFamily('SourceHanSans', '', '~/font/sourcehansans.ttf')
 //->setFontFamily('SourceHanSans','b', '~/font/sourcehansansb.ttf')
 
 //设置LOGO
