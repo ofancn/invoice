@@ -42,8 +42,16 @@ $invoice=get_invoice();
 ### 例
 ~~~PHP
 $invoice = new Invoice('CNY','A4');
+
+
+
 //Set number formatting
 $invoice->setNumberFormat('.',',')
+
+//设置字体
+//->setFontFamily('SourceHanSans', '', '~/sourcehansans.ttf')
+//->setFontFamily('SourceHanSans','b', '~/font/sourcehansansb.ttf')
+
 //设置LOGO
 ->setLogo("images/apple.png",100,88)
 //设置颜色
@@ -82,4 +90,228 @@ $invoice->setNumberFormat('.',',')
 
 ~~~
 
+
 ![演示](images/demo.png)
+
+
+### 类说明
+~~~php
+/**
+     * 实例
+     * @param string $currency
+     *            货币代码
+     * @param string $size
+     *            纸张大小 A4 Letter Legal
+     * @param string $language
+     *            语言
+     */
+    function __construct($currency = 'CNY', $size = 'A4', $language = 'zh');
+
+    /**
+     * 获取货币符号
+     *
+     * @param string $code
+     *            货币代码
+     * @return string|null
+     */
+    public function getCurrencySymbol(string $code);
+
+    /**
+     * 判断货币是否可用
+     *
+     * @param string $code
+     *            货币代码
+     * @return bool
+     */
+    public function hasCurrency(string $code);
+
+    /**
+     * 设置字体
+     *
+     * @param string $family
+     *            字体名称
+     * @param string $style
+     *            字体样式 至少包含两种字体样式 ''和'b'
+     * @param string $file
+     *            字体文件
+     * @return $this
+     */
+    public function setFontFamily(string $family, string $style = '', string $file = '');
+
+    /**
+     * 设置语言
+     *
+     * @param string $language
+     * @return $this
+     */
+    public function setLanguage(string $language);
+
+    /**
+     * 设置要文档类型
+     *
+     * @param type $title
+     * @return $this
+     */
+    public function setType(string $title);
+
+    /**
+     * 设置颜色
+     *
+     * @param string $rgbcolor
+     *            十六进制颜色代码。红色示例：'＃FF0000'
+     * @return $this
+     */
+    public function setColor(string $rgbcolor);
+
+    /**
+     * 设置文档日期
+     *
+     * @param string $date
+     * @return $this
+     */
+    public function setDate(string $date);
+
+    /**
+     * 截止日期
+     *
+     * @param string $date
+     * @return $this
+     */
+    public function setDue(string $date);
+
+    /**
+     * 设置logo
+     *
+     * @param string $logo
+     *            要使用的图像文件的本地路径或远程URL
+     * @param int $maxWidth
+     *            宽度 毫米为单位
+     * @param int $maxHeight
+     *            高度 毫米为单位
+     * @return $this
+     */
+    public function setLogo($logo = 0, $maxWidth = 0, $maxHeight = 0);
+
+    /**
+     * 设置公司详细信息
+     *
+     * @param array $data
+     * @return $this
+     */
+    public function setFrom(array $data);
+
+    /**
+     * 客户信息
+     *
+     * @param array $data
+     * @return $this
+     */
+    public function setTo(array $data);
+
+    /**
+     * 设置文档编号
+     *
+     * @param string $reference
+     * @return $this
+     */
+    public function setReference($reference);
+
+    /**
+     * 设置数字格式
+     *
+     * @param string $decimals
+     *            小数点的字符
+     * @param string $thousands_sep
+     *            千位分隔符的字符
+     * @return $this
+     */
+    public function setNumberFormat($decimals, $thousands_sep);
+
+    /**
+     * 新增商品
+     *
+     * @param string $item
+     *            产品或服务名称
+     * @param string $description
+     *            描述 使用<br>或\ n添加换行符
+     * @param decimal $quantity
+     *            数量
+     * @param decimal|string $vat
+     *            金额
+     * @param decimal $price
+     *            单价
+     * @param string|decimal|boolean $discount
+     *            折扣 没有请填 false
+     * @param int $total
+     *            总计
+     * @return $this
+     */
+    public function addItem($item, $description, $quantity, $vat, $price, $discount, $total);
+
+    /**
+     * 设置总计
+     *
+     * @param string $name
+     *            名称
+     * @param decimal $value
+     *            值
+     * @param boolean $colored
+     *            背景色 true 则背景色
+     * @return $this
+     */
+    public function addTotal($name, $value, $colored = false);
+
+    /**
+     * 添加标题
+     *
+     * @param string $title
+     * @return $this
+     */
+    public function addTitle($title);
+
+    /**
+     * 添加段落
+     *
+     * @param string $paragraph
+     * @return $this
+     */
+    public function addParagraph($paragraph);
+
+    /**
+     * 添加徽章
+     *
+     * @param string $badge
+     * @return $this
+     */
+    public function addBadge($badge);
+
+    /**
+     * 设置页脚
+     *
+     * @param string $note
+     * @return $this
+     */
+    public function setFooternote($note);
+
+    /**
+     * 切换公司信息和客户信息的水平位置
+     *
+     * @return $this
+     */
+    public function flipflop();
+
+    /**
+     * 渲染交付
+     *
+     * @param string $name
+     *            名称
+     * @param string $destination
+     *            交付方式
+     *            I（将文件内联发送到浏览器）
+     *            D（发送到浏览器并强制使用名称给出的名称下载文件）
+     *            F（保存到本地文件。确保在name参数中设置传递路径）
+     *            S（将文档作为字符串返回）
+     * @return $this
+     */
+    public function render($name = '', $destination = '');
+~~~

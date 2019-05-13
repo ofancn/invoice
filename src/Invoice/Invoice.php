@@ -355,11 +355,11 @@ class Invoice extends Pdf
     ];
 
     /**
-     *
+     * 实例
      * @param string $currency
      *            货币代码
      * @param string $size
-     *            纸张大小 A4Default Letter Legal
+     *            纸张大小 A4 Letter Legal
      * @param string $language
      *            语言
      */
@@ -415,7 +415,7 @@ class Invoice extends Pdf
      * @param string $family
      *            字体名称
      * @param string $style
-     *            字体样式
+     *            字体样式 至少包含两种字体样式 ''和'b'
      * @param string $file
      *            字体文件
      * @return $this
@@ -430,7 +430,7 @@ class Invoice extends Pdf
     }
 
     /**
-     * 设置字体
+     * 设置语言
      *
      * @param string $language
      * @return $this
@@ -789,7 +789,7 @@ class Invoice extends Pdf
             $this->SetDrawColor($this->color[0], $this->color[1], $this->color[2]);
             $this->SetFont(self::$font, 'B', 10);
             $width = ($this->document['w'] - $this->margins['l'] - $this->margins['r']) / 2;
-            if (! empty($this->flipflop)) {
+            if (!empty($this->flipflop)) {
                 $to = self::$l['to'];
                 $from = self::$l['from'];
                 self::$l['to'] = $from;
@@ -815,17 +815,17 @@ class Invoice extends Pdf
             $this->SetFont(self::$font, '', 8);
             $this->SetTextColor(100, 100, 100);
             $this->Ln(7);
-            for ($i = 1; $i < max(count((array) $this->from), count((array) $this->to)); $i ++) {
+            for ($i = 1; $i < max(count((array)$this->from), count((array)$this->to)); $i++) {
                 $this->Cell($width, $lineheight, $this->encoding($this->from[$i]), 0, 0, 'L');
                 $this->Cell(0, $lineheight, $this->encoding($this->to[$i]), 0, 0, 'L');
                 $this->Ln(5);
             }
-            $this->Ln(- 6);
+            $this->Ln(-6);
         }
         $this->Ln(5);
 
         // Table header
-        if (! isset($this->productsEnded)) {
+        if (!isset($this->productsEnded)) {
             $width_other = ($this->document['w'] - $this->margins['l'] - $this->margins['r'] - $this->firstColumnWidth - ($this->columns * $this->columnSpacing)) / ($this->columns - 1);
             $this->SetTextColor(50, 50, 50);
             $this->Ln(12);
@@ -931,7 +931,7 @@ class Invoice extends Pdf
                 $this->SetTextColor(50, 50, 50);
                 $this->SetFillColor($bgcolor, $bgcolor, $bgcolor);
                 $this->Cell(1 + $this->firstColumnWidth, $cellHeight, '', 0, 0, 'L', 0);
-                for ($i = 0; $i < $this->columns - 3; $i ++) {
+                for ($i = 0; $i < $this->columns - 3; $i++) {
                     $this->Cell($width_other, $cellHeight, '', 0, 0, 'L', 0);
                     $this->Cell($this->columnSpacing, $cellHeight, '', 0, 0, 'L', 0);
                 }
@@ -1003,7 +1003,7 @@ class Invoice extends Pdf
 
     public function Footer()
     {
-        $this->SetY(- $this->margins['t']);
+        $this->SetY(-$this->margins['t']);
         $this->SetFont(self::$font, '', 8);
         $this->SetTextColor(50, 50, 50);
         $this->Cell(0, 10, $this->footernote, 0, 0, 'L');
@@ -1036,7 +1036,7 @@ class Invoice extends Pdf
 
     private function resizeToFit($image)
     {
-        list ($width, $height) = getimagesize($image);
+        list($width, $height) = getimagesize($image);
         $newWidth = $this->maxImageDimensions[0] / $width;
         $newHeight = $this->maxImageDimensions[1] / $height;
         $scale = min($newWidth, $newHeight);
@@ -1081,9 +1081,9 @@ class Invoice extends Pdf
 
     protected function Rotate($angle, $x = -1, $y = -1)
     {
-        if ($x == - 1)
+        if ($x == -1)
             $x = $this->x;
-        if ($y == - 1)
+        if ($y == -1)
             $y = $this->y;
         if ($this->angle != 0)
             $this->_out('Q');
@@ -1094,7 +1094,7 @@ class Invoice extends Pdf
             $s = sin($angle);
             $cx = $x * $this->k;
             $cy = ($this->h - $y) * $this->k;
-            $this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm 1 0 0 1 %.2F %.2F cm', $c, $s, - $s, $c, $cx, $cy, - $cx, - $cy));
+            $this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm 1 0 0 1 %.2F %.2F cm', $c, $s, -$s, $c, $cx, $cy, -$cx, -$cy));
         }
     }
 
